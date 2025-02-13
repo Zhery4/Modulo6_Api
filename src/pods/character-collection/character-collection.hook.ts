@@ -1,5 +1,8 @@
 import React from 'react';
 import { CharacterEntityVm } from './character-collection.vm';
+import { getCharacterCollection } from './api/character-collection.api';
+import { mapToCollection } from '#common/mappers';
+import { mapFromApiToVm } from './character-collection.mapper';
 
 export const useCharacterCollection = () => {
   const [characterCollection, setCharacterCollection] = React.useState<
@@ -7,9 +10,9 @@ export const useCharacterCollection = () => {
   >([]);
 
   const loadHotelCollection = () => {
-    // getHotelCollection().then((result) =>
-    //   setHotelCollection(mapToCollection(result, mapFromApiToVm))
-    // );
+    getCharacterCollection().then((result) =>
+      setCharacterCollection(mapToCollection(result, mapFromApiToVm))
+    );
   };
 
   return { characterCollection, loadHotelCollection };
