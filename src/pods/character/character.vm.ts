@@ -1,4 +1,4 @@
-export interface Character {
+export interface CharacterVm {
   id: number;
   name: string;
   status: string;
@@ -20,7 +20,7 @@ export interface Character {
   bestSentence?: string;
 }
 
-export const createEmptyCharacter = (): Character => ({
+export const createEmptyCharacter = (): CharacterVm => ({
   id: 0,
   name: '',
   status: '',
