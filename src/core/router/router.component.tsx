@@ -17,7 +17,7 @@ export const RouterComponent: React.FunctionComponent = () => {
         <Route path={switchRoutes.editHotel} element={<HotelScene />} />
         <Route
           path={switchRoutes.root}
-          element={<Navigate to={switchRoutes.hotelCollection} />}
+          element={<Navigate to={switchRoutes.characterCollection} />}
         />
         <Route
           path={switchRoutes.characterCollection}
@@ -28,6 +28,10 @@ export const RouterComponent: React.FunctionComponent = () => {
           element={<CharacterScene />}
         />
         <Route path={switchRoutes.editCharacter} element={<CharacterScene />} />
+        <Route
+          path={switchRoutes.detailsCharacter}
+          element={<CharacterScene />}
+        />
       </Routes>
     </HashRouter>
   );

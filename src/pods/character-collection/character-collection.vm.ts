@@ -4,4 +4,6 @@ export interface CharacterEntityVm {
   status: string;
   species: string;
   type: string;
+  image: string;
+  bestSentence?: string;
 }

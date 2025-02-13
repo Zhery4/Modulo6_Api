@@ -4,7 +4,7 @@ import React from 'react';
 const CharacterScene = () => {
   return (
     <AppLayout>
-      <div />
+      <div>Working </div>
     </AppLayout>
   );
 };
