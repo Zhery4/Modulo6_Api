@@ -1,5 +1,3 @@
-import { CharacterVm } from '#pods/character/character.vm';
-
 export interface CharacterEntityVm {
   id: number;
   name: string;

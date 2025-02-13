@@ -9,11 +9,11 @@ export const useCharacterCollection = () => {
     CharacterEntityVm[]
   >([]);
 
-  const loadHotelCollection = () => {
+  const loadCharacterCollection = () => {
     getCharacterCollection().then((result) =>
       setCharacterCollection(mapToCollection(result, mapFromApiToVm))
     );
   };
 
-  return { characterCollection, loadHotelCollection };
+  return { characterCollection, loadCharacterCollection };
 };
