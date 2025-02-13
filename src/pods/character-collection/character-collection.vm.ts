@@ -1,8 +1,9 @@
 import { CharacterVm } from '#pods/character/character.vm';
 
-export interface CharacterCollectionVm {
-  info: {
-    count: number;
-  };
-  results: CharacterVm[];
+export interface CharacterEntityVm {
+  id: string;
+  name: string;
+  status: string;
+  species: string;
+  type: string;
 }
