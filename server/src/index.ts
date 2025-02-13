@@ -1,18 +1,12 @@
-import { Hono } from 'hono';
-import { logger } from 'hono/logger';
-import { cors } from 'hono/cors';
 import { serve } from '@hono/node-server';
 import { characters } from './mock-data.js';
 import { CharacterListResponse } from './model.js';
-
+import { createRestApiServer } from './core/server/api-rest.server.js';
 let db = {
   characters,
 };
 
-const app = new Hono();
-app.use(logger());
-
-app.use('/api/*', cors());
+const app = createRestApiServer();
 
 app.get('/api/character', async (context) => {
   const response: CharacterListResponse = {

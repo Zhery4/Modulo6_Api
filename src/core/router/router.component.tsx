@@ -24,11 +24,6 @@ export const RouterComponent: React.FunctionComponent = () => {
           element={<CharacterCollectionScene />}
         />
         <Route
-          path={switchRoutes.createCharacter}
-          element={<CharacterScene />}
-        />
-        <Route path={switchRoutes.editCharacter} element={<CharacterScene />} />
-        <Route
           path={switchRoutes.detailsCharacter}
           element={<CharacterScene />}
         />
