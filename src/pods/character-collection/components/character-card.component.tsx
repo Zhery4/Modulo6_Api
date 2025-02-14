@@ -24,7 +24,7 @@ const CharacterCard = (props: ICharacterCardProps) => {
     console.log(character);
   }, []);
   return (
-    <Card>
+    <Card className={classes.card}>
       <CardHeader title={character.name} subheader={character.species} />
       <CardContent>
         <div className={classes.content}>
