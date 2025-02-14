@@ -24,39 +24,47 @@ const CharacterCard = (props: ICharacterCardProps) => {
     console.log(character);
   }, []);
   return (
-    <Card className={classes.card}>
+    <Card
+      className={classes.card}
+      style={{
+        backgroundImage: `url(${character.image})`,
+        backgroundSize: 'cover',
+      }}
+    >
       <CardHeader title={character.name} subheader={character.species} />
-      <CardContent>
-        <div className={classes.content}>
-          {
-            <CardMedia
-              image={character.image}
-              title={character.name}
-              style={{ height: 0, paddingTop: '56.25%' }}
-            />
-          }
-          <Typography variant="subtitle1" gutterBottom>
-            {character.name}
-          </Typography>
-        </div>
-      </CardContent>
-      <CardActions>
-        <Button
-          size="small"
-          color="primary"
-          onClick={() => {
-            navigate(`/characters/${character.id}/details`);
-          }}
-        >
-          Details
-        </Button>
-        {/* <IconButton onClick={() => onEdit(hotel.id)}>
+      <div>
+        <CardContent>
+          <div className={classes.content}>
+            <Typography variant="subtitle1" gutterBottom>
+              {character.bestSentence}
+            </Typography>
+            <Typography variant="body2" color="textSecondary">
+              {character.type}
+            </Typography>
+            <Typography variant="body2" color="textSecondary">
+              {character.status}
+            </Typography>
+          </div>
+        </CardContent>
+        <CardActions>
+          <Button
+            size="small"
+            color="primary"
+            onClick={() => {
+              navigate(`/characters/${character.id}/details`);
+            }}
+            variant="contained"
+          >
+            Details
+          </Button>
+          {/* <IconButton onClick={() => onEdit(hotel.id)}>
           <EditIcon />
         </IconButton>
         <IconButton onClick={() => onDelete(hotel.id)}>
           <DeleteIcon />
         </IconButton> */}
-      </CardActions>
+        </CardActions>
+      </div>
     </Card>
   );
 };
