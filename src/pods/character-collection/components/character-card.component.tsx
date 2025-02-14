@@ -7,7 +7,7 @@ import {
   CardMedia,
   Typography,
 } from '@mui/material';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { CharacterEntityVm } from '../character-collection.vm';
 import * as classes from './character-card.styles';
 import { useNavigate } from 'react-router-dom';
@@ -19,6 +19,10 @@ interface ICharacterCardProps {
 const CharacterCard = (props: ICharacterCardProps) => {
   const { character } = props;
   const navigate = useNavigate();
+
+  useEffect(() => {
+    console.log(character);
+  }, []);
   return (
     <Card>
       <CardHeader title={character.name} subheader={character.species} />

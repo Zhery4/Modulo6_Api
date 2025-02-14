@@ -1,5 +1,10 @@
 import axios from 'axios';
 
+//Ejercicio 1
+
+//const apiUrl = 'https://rickandmortyapi.com/api';
+
+//Ejercicio 2
 const apiUrl = 'http://localhost:3000/api';
 
 export const getRequests = async (url: string, params?: any) => {
