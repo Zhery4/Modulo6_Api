@@ -8,7 +8,6 @@ const CharacterCollectionContainer = () => {
 
   useEffect(() => {
     loadCharacterCollection();
-    console.log(characterCollection);
   }, []);
 
   return <CharacterCollectionComponent charactersList={characterCollection} />;
