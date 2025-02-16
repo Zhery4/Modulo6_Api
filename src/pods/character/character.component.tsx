@@ -1,8 +1,9 @@
 import * as classes from './character.styles';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { CharacterVm } from './character.vm';
 import { Button, Typography } from '@mui/material';
 import CharacterModal from './components/character.modal';
+import { putRequests } from '#core/api';
 
 interface ICharacterComponentProps {
   character: CharacterVm;
@@ -15,6 +16,11 @@ const CharacterComponent = (props: ICharacterComponentProps) => {
   const handleSave = (newSentence: string) => {
     setBestSentence(newSentence);
   };
+
+  useEffect(() => {
+    putRequests(`character/${character.id}`, {...character, bestSentence});
+
+  }, [bestSentence]); 
 
   return <div className={classes.CharacterContent}>
       <div className={classes.CharacterContentHeader}>
@@ -33,8 +39,6 @@ const CharacterComponent = (props: ICharacterComponentProps) => {
         <p>Status: {character.status}</p>
         <p>Species: {character.species}</p>
         <p>Gender: {character.gender}</p>
-      </div>
-      <div className={classes.CharacterContentDetails}>
         <p>bestSentence: {bestSentence}</p>
       </div>
       <div>

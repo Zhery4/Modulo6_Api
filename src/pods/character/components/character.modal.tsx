@@ -1,6 +1,7 @@
 import React from 'react';
 import { Modal, Box, Typography, Button, TextField } from '@mui/material';
 import { Formik, Form, Field } from 'formik';
+import { TextFieldComponent } from '#common/components';
 
 interface CharacterModalProps {
   isOpen: boolean;
@@ -19,19 +20,14 @@ const CharacterModal: React.FC<CharacterModalProps> = ({ isOpen, onClose, bestSe
         <Formik
           initialValues={{ bestSentence }}
           onSubmit={(values) => {
+            console.log(values.bestSentence);
             onSave(values.bestSentence);
             onClose();
           }}
         >
           {() => (
             <Form>
-              <Field
-                component={TextField}
-                name="bestSentence"
-                label="Best Sentence"
-                fullWidth
-                margin="normal"
-              />
+              <TextFieldComponent name="bestSentence" label="Best Sentence" />
               <Button type="submit" variant="contained" color="primary">
                 Save
               </Button>
